@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端转行路线图 | 机械 + 电控 + 软件</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #22222e;
+            --text-primary: #e8e8f0;
+            --text-secondary: #8888a0;
+            --accent-blue: #4a9eff;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-pink: #ec4899;
+            --border-color: #2a2a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 158, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .tags {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: rgba(74, 158, 255, 0.15);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title .icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 .num {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-item h4 {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-item .content {
+            background: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .timeline-item li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-item li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        /* Job Cards */
+        .job-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .job-card .title {
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 8px;
+        }
+
+        .job-card .desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Priority Table */
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .priority-table th,
+        .priority-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .priority-table th {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-table td {
+            color: var(--text-primary);
+        }
+
+        .priority-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge.high { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+        .badge.medium { background: rgba(245, 158, 11, 0.2); color: var(--accent-orange); }
+        .badge.low { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+
+        /* Resource List */
+        .resource-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .resource-item:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .resource-item .emoji {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .resource-item .info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .resource-item .info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .resource-item .link {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            margin-top: 24px;
+        }
+
+        .progress-item {
+            margin-bottom: 16px;
+        }
+
+        .progress-item .label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+
+        .progress-item .bar {
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-item .fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Quote */
+        .quote {
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid var(--accent-purple);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Code Block */
+        .code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+
+        /* Week Schedule */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .schedule-day {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .schedule-day .day {
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .schedule-day .activity {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .schedule-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button class="nav-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ 顶部</button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚀 前端转行路线图</h1>
+            <p class="subtitle">机械 + 电控 + 软件 · 工业软件/自动化/机器人方向</p>
+            <div class="tags">
+                <span class="tag">🎓 机械背景</span>
+                <span class="tag">💻 前端开发</span>
+                <span class="tag">🔧 3D打印</span>
+                <span class="tag">⚡ 单片机</span>
+                <span class="tag">🏭 工业软件</span>
+            </div>
+        </header>
+
+        <!-- 背景介绍 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(74, 158, 255, 0.2);">📋</div>
+                <h2>背景与目标</h2>
+            </div>
+            <div class="card">
+                <h3><span class="num">👤</span> 个人情况</h3>
+                <ul>
+                    <li>29岁，机械专业毕业</li>
+                    <li>目前从事前端开发工作</li>
+                    <li>计划购买3D打印机，打印机械齿轮</li>
+                    <li>学习51单片机和电路知识</li>
+                    <li>想配合编程做一些Demo</li>
+                </ul>
+                <div class="quote">
+                    "不是从0转行，是把机械专业和前端开发重新接起来"
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心策略 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(139, 92, 246, 0.2);">🎯</div>
+                <h2>核心转型策略</h2>
+            </div>
+            <div class="card">
+                <h3>定位转变</h3>
+                <div class="quote">
+                    "我是懂机械结构和设备逻辑的前端/工业软件工程师，正在补齐电控和嵌入式能力，能把真实设备做成可控制、可监控、可展示的系统"
+                </div>
+            </div>
+            <div class="card">
+                <h3>为什么不是纯嵌入式？</h3>
+                <ul>
+                    <li>直接去卷纯嵌入式C工程师会和科班嵌入式、电子、自动化的人正面对打</li>
+                    <li>拿出"我能做设备 + 控制 + Web可视化 + 数据平台"的组合拳，更有辨识度</li>
+                    <li>前端经验继续变现，不需要从零开始</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 强增长行业 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(16, 185, 129, 0.2);">📈</div>
+                <h2>强增长行业（考虑AI替代因素）</h2>
+            </div>
+            <div class="grid">
+                <div class="job-card">
+                    <div class="title">🤖 机器人 / 具身智能</div>
+                    <div class="desc">工业自动化、人形机器人、运动控制</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">💎 半导体设备</div>
+                    <div class="desc">设备软件、运动控制、测试设备</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🖥️ AI数据中心</div>
+                    <div class="desc">电力监控、冷却系统、DCIM平台</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🏭 智能制造软件</div>
+                    <div class="desc">MES/SCADA/HMI、工业IoT</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🔋 新能源装备</div>
+                    <div class="desc">储能EMS、充电桩、BMS工具链</div>
+                </div>
+            </div>
+
+            <h4 style="margin: 24px 0 12px; color: var(--accent-orange);">行业优先级</h4>
+            <table class="priority-table">
+                <thead>
+                    <tr>
+                        <th>方向</th>
+                        <th>增长</th>
+                        <th>AI替代风险</th>
+                        <th>入门难度</th>
+                        <th>适合度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>工业前端/HMI/MES/SCADA</td>
+                        <td><span class="badge high">中高</span></td>
+                        <td><span class="badge medium">中</span></td>
+                        <td><span class="badge medium">低中</span></td>
+                        <td><span class="badge high">很高</span></td>
+                    </tr>
+                    <tr>
+                        <td>工业IoT/设备联网</td>
+                        <td><span class="badge high">高</span></td>
+                        <td><span class="badge low">中低</span></td>
+                        <td><span class="badge medium">中</span></td>
+                        <td><span class="badge high">很高</span></td>
+                    </tr>
+                    <tr>
+                        <td>自动化设备/PLC</td>
+                        <td><span class="badge high">中高</span></td>
+                        <td><span class="badge low">低</span></td>
+                        <td><span class="badge high">中高</span></td>
+                        <td><span class="badge high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>机器人应用/具身智能</td>
+                        <td><span class="badge high">高</span></td>
+                        <td><span class="badge medium">中</span></td>
+                        <td><span class="badge high">高</span></td>
+                        <td><span class="badge medium">中高</span></td>
+                    </tr>
+                    <tr>
+                        <td>数据中心DCIM/能源监控</td>
+                        <td><span class="badge high">高</span></td>
+                        <td><span class="badge low">中低</span></td>
+                        <td><span class="badge medium">中</span></td>
+                        <td><span class="badge high">高</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 目标岗位 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(245, 158, 11, 0.2);">💼</div>
+                <h2>目标岗位方向</h2>
+            </div>
+            <div class="grid">
+                <div class="job-card">
+                    <div class="title">🏭 工业前端/HMI开发</div>
+                    <div class="desc">设备控制界面、工厂看板</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🌐 IoT前端/工业物联网</div>
+                    <div class="desc">设备数据采集、状态监控</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">⚡ 嵌入式应用工程师</div>
+                    <div class="desc">MCU、传感器、电机、通信协议</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🔧 自动化工程师助理</div>
+                    <div class="desc">PLC、运动控制、产线调试</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🤖 机器人工程师助理</div>
+                    <div class="desc">夹爪、视觉、运动控制</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🖥️ 上位机软件工程师</div>
+                    <div class="desc">Web/Electron控制界面</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">📊 数字孪生/工业可视化</div>
+                    <div class="desc">Three.js、WebGL、设备仿真</div>
+                </div>
+                <div class="job-card">
+                    <div class="title">🔌 FAE/技术支持工程师</div>
+                    <div class="desc">伺服、电机、传感器、工业软件</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习路线图 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(236, 72, 153, 0.2);">🗺️</div>
+                <h2>学习路线图（12个月）</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>阶段1：电子与单片机基础 · 1-2个月</h4>
+                    <div class="content">
+                        <p><strong>目标：</strong>能看懂基础电路，能安全接线，能控制传感器和执行器</p>
+                        <ul>
+                            <li>电压、电流、电阻、功率、接地、上拉下拉</li>
+                            <li>GPIO、PWM、ADC、定时器、中断</li>
+                            <li>按键、LED、蜂鸣器、继电器、限位开关</li>
+                            <li>温湿度、距离、光电、霍尔、编码器</li>
+                            <li>Arduino 或 ESP32 入门（51可了解，不要长期停）</li>
+                        </ul>
+                        <p style="margin-top: 12px; color: var(--accent-green);"><strong>项目：</strong>按键控制LED、测距显示、ESP32网页控制</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h4>阶段2：电机与机械结构 · 2-3个月</h4>
+                    <div class="content">
+                        <p><strong>目标：</strong>把机械专业重新接回来，做出能动的结构</p>
+                        <ul>
+                            <li>舵机、直流电机、步进电机</li>
+                            <li>H桥、电机驱动、PWM调速</li>
+                            <li>齿轮、连杆、凸轮、棘轮、滑轨、轴承</li>
+                            <li>3D打印公差、装配、螺丝孔、轴孔</li>
+                            <li>限位、归零、卡死保护、急停概念</li>
+                        </ul>
+                        <p style="margin-top: 12px; color: var(--accent-green);"><strong>项目：</strong>齿轮减速箱、自动门/升降台、小车底盘</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h4>阶段3：通信与前端可视化 · 2个月</h4>
+                    <div class="content">
+                        <p><strong>目标：</strong>把前端能力接到真实设备上</p>
+                        <ul>
+                            <li>串口通信</li>
+                            <li>Modbus RTU/TCP</li>
+                            <li>MQTT</li>
+                            <li>WebSocket</li>
+                            <li>前端实时状态展示、报警、日志、趋势图</li>
+                        </ul>
+                        <p style="margin-top: 12px; color: var(--accent-green);"><strong>项目：</strong>ESP32通过MQTT上报状态、前端看板展示</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h4>阶段4：完整作品 · 3-4个月</h4>
+                    <div class="content">
+                        <p><strong>目标：</strong>做出能放简历、能视频展示、能面试讲清楚的项目</p>
+                        <p style="margin-bottom: 12px;"><strong>推荐项目：小型自动分拣机</strong></p>
+                        <ul>
+                            <li><strong>结构：</strong>3D打印传送带/导轨/分拣挡板</li>
+                            <li><strong>驱动：</strong>光电传感器 + 舵机/步进电机</li>
+                            <li><strong>控制：</strong>ESP32/STM32</li>
+                            <li><strong>通信：</strong>MQTT/WebSocket</li>
+                            <li><strong>前端：</strong>启动/停止、状态、产量、报警、速度</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <h4>阶段5：投递求职 · 持续3-6个月</h4>
+                    <div class="content">
+                        <p><strong>简历定位：</strong></p>
+                        <div class="code-block">
+前端开发背景，机械专业出身，具备设备可视化、工业通信、传感器/执行器控制和机电demo开发能力，目标方向为工业软件、设备联网、HMI/SCADA/上位机开发
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能优先级 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(59, 130, 246, 0.2);">⚡</div>
+                <h2>技能优先级</h2>
+            </div>
+            <div class="card">
+                <h3><span class="num" style="background: var(--accent-green);">✓</span> 必须掌握</h3>
+                <ul>
+                    <li>React / TypeScript（继续保持）</li>
+                    <li>ESP32 或 STM32 基础</li>
+                    <li>串口、MQTT、Modbus</li>
+                    <li>电机控制基础</li>
+                    <li>传感器和限位逻辑</li>
+                    <li>3D打印结构设计基础</li>
+                    <li>GitHub项目文档和演示视频</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="num" style="background: var(--accent-orange);">+</span> 加分项</h3>
+                <ul>
+                    <li>PLC基础（西门子/三菱）</li>
+                    <li>Electron</li>
+                    <li>Node.js网关服务</li>
+                    <li>ECharts / Three.js工业可视化</li>
+                    <li>Docker</li>
+                    <li>Linux基础</li>
+                    <li>CAD / Fusion 360 / SolidWorks</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="num" style="background: var(--text-secondary);">-</span> 暂时不用急</h3>
+                <ul>
+                    <li>复杂机器人算法</li>
+                    <li>深度学习</li>
+                    <li>ROS2</li>
+                    <li>高级电路设计</li>
+                    <li>电源设计</li>
+                    <li>高压强电</li>
+                    <li>PCB高频/高速设计</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 学习资源 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(168, 85, 247, 0.2);">📚</div>
+                <h2>学习资源推荐</h2>
+            </div>
+
+            <h4 style="margin-bottom: 12px; color: var(--accent-blue);">一、电子电路基础</h4>
+            <div class="resource-item">
+                <div class="emoji">🔌</div>
+                <div class="info">
+                    <h4>All About Circuits</h4>
+                    <p>免费电子电路教材，适合查电阻、电容、二极管、MOS、电源</p>
+                </div>
+                <a class="link" href="https://www.allaboutcircuits.com/textbook/" target="_blank">allaboutcircuits.com ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">📺</div>
+                <div class="info">
+                    <h4>Khan Academy 电气工程</h4>
+                    <p>用温和的方式理解电路分析、半导体、信号</p>
+                </div>
+                <a class="link" href="https://www.khanacademy.org/electrical-engineering/" target="_blank">khanacademy.org ↗</a>
+            </div>
+
+            <h4 style="margin: 24px 0 12px; color: var(--accent-blue);">二、单片机/嵌入式</h4>
+            <div class="resource-item">
+                <div class="emoji">🔧</div>
+                <div class="info">
+                    <h4>Arduino 官方文档</h4>
+                    <p>入门最快，适合建立GPIO、PWM、串口、传感器直觉</p>
+                </div>
+                <a class="link" href="https://docs.arduino.cc/" target="_blank">arduino.cc ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">📡</div>
+                <div class="info">
+                    <h4>ESP-IDF 官方文档</h4>
+                    <p>ESP32官方，MQTT、Wi-Fi、设备联网很适合</p>
+                </div>
+                <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/latest/" target="_blank">espressif.com ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">🔬</div>
+                <div class="info">
+                    <h4>STM32 官方课程</h4>
+                    <p>STM32Cube、GPIO、ADC、定时器、通信</p>
+                </div>
+                <a class="link" href="https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html" target="_blank">st.com ↗</a>
+            </div>
+
+            <h4 style="margin: 24px 0 12px; color: var(--accent-blue);">三、工业通信/IoT</h4>
+            <div class="resource-item">
+                <div class="emoji">📨</div>
+                <div class="info">
+                    <h4>MQTT 官方入门</h4>
+                    <p>简单、直观、适合前端开发者</p>
+                </div>
+                <a class="link" href="https://mqtt.org/getting-started/" target="_blank">mqtt.org ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">🔀</div>
+                <div class="info">
+                    <h4>Node-RED</h4>
+                    <p>快速做IoT原型，MQTT、HTTP、Dashboard</p>
+                </div>
+                <a class="link" href="https://nodered.org/docs/" target="_blank">nodered.org ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">🏭</div>
+                <div class="info">
+                    <h4>Modbus 官方</h4>
+                    <p>工业现场常见协议</p>
+                </div>
+                <a class="link" href="https://www.modbus.org/introduction-to-modbus" target="_blank">modbus.org ↗</a>
+            </div>
+
+            <h4 style="margin: 24px 0 12px; color: var(--accent-blue);">四、机械设计/3D打印</h4>
+            <div class="resource-item">
+                <div class="emoji">⚙️</div>
+                <div class="info">
+                    <h4>Fusion 360 官方教程</h4>
+                    <p>机械结构、装配、3D打印</p>
+                </div>
+                <a class="link" href="https://www.autodesk.com/solutions/design-manufacturing/fusion-tutorials" target="_blank">autodesk.com ↗</a>
+            </div>
+            <div class="resource-item">
+                <div class="emoji">🎨</div>
+                <div class="info">
+                    <h4>Electronics For You DIY项目</h4>
+                    <p>Arduino、ESP32、Automation、Industrial项目库</p>
+                </div>
+                <a class="link" href="https://www.electronicsforu.com/category/electronics-projects/hardware-diy" target="_blank">electronicsforu.com ↗</a>
+            </div>
+
+            <h4 style="margin: 24px 0 12px; color: var(--accent-blue);">五、PCB设计（后期学）</h4>
+            <div class="resource-item">
+                <div class="emoji">🔲</div>
+                <div class="info">
+                    <h4>KiCad 官方教程</h4>
+                    <p>免费开源PCB工具</p>
+                </div>
+                <a class="link" href="https://docs.kicad.org/8.0/en/getting_started_in_kicad/" target="_blank">kicad.org ↗</a>
+            </div>
+        </section>
+
+        <!-- 学习方法 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(34, 197, 94, 0.2);">💡</div>
+                <h2>高效学习方法</h2>
+            </div>
+            <div class="card">
+                <h3>项目倒逼法（不要按课程从头学到尾）</h3>
+                <p style="margin-bottom: 16px;">每个项目按这个模板做：</p>
+                <ul>
+                    <li><strong>目标：</strong>这个设备要完成什么动作？</li>
+                    <li><strong>机械：</strong>有哪些运动结构？齿轮、连杆、传送带、夹爪？</li>
+                    <li><strong>电控：</strong>用什么传感器？什么电机？什么驱动？</li>
+                    <li><strong>通信：</strong>串口、MQTT、Modbus选哪个？</li>
+                    <li><strong>前端：</strong>显示哪些状态？能控制哪些动作？</li>
+                    <li><strong>异常：</strong>卡住、掉线、超时、限位触发怎么办？</li>
+                    <li><strong>复盘：</strong>烧了什么、错接了什么、为什么不稳定？</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>推荐练习项目（按顺序做）</h3>
+                <ul>
+                    <li><strong>1.</strong> ESP32读取温湿度/距离传感器，网页显示数据</li>
+                    <li><strong>2.</strong> 按钮+限位开关+舵机，做一个自动门</li>
+                    <li><strong>3.</strong> 步进电机+3D打印齿轮箱，做传动展示台</li>
+                    <li><strong>4.</strong> 光电传感器+计数器+前端看板，做产量统计</li>
+                    <li><strong>5.</strong> MQTT+WebSocket，做设备状态监控页面</li>
+                    <li><strong>6.</strong> 小型自动分拣机（终极项目）</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 每周安排 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(239, 68, 68, 0.2);">📅</div>
+                <h2>每周学习安排</h2>
+            </div>
+            <div class="card">
+                <h3>每周时间分配</h3>
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <div class="day">周一</div>
+                        <div class="activity">电路/代码<br>1.5小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周二</div>
+                        <div class="activity">接线调试<br>1.5小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周三</div>
+                        <div class="activity">通信/MQTT<br>1.5小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周四</div>
+                        <div class="activity">写代码<br>1.5小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周五</div>
+                        <div class="activity">总结复盘<br>1小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周六</div>
+                        <div class="activity">动手实践<br>4小时</div>
+                    </div>
+                    <div class="schedule-day">
+                        <div class="day">周日</div>
+                        <div class="activity">文档/视频<br>2小时</div>
+                    </div>
+                </div>
+                <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.85rem;">
+                    💡 每月要留下一份东西：代码、接线图、照片、视频、复盘
+                </p>
+            </div>
+        </section>
+
+        <!-- 12个月目标 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="icon" style="background: rgba(245, 158, 11, 0.2);">🎯</div>
+                <h2>12个月目标</h2>
+            </div>
+            <div class="card">
+                <div class="progress-section">
+                    <div class="progress-item">
+                        <div class="label">
+                            <span>第1-2个月：控制传感器、电机、ESP32联网</span>
+                            <span style="color: var(--accent-green);">完成✓</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="label">
+                            <span>第3-4个月：机械运动结构+基础控制</span>
+                            <span style="color: var(--accent-blue);">进行中</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="label">
+                            <span>第5-6个月：通信协议+前端可视化</span>
+                            <span style="color: var(--text-secondary);">未开始</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="label">
+                            <span>第7-10个月：完整项目（自动分拣机）</span>
+                            <span style="color: var(--text-secondary);">未开始</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="label">
+                            <span>第11-12个月：求职投递+面试准备</span>
+                            <span style="color: var(--text-secondary);">未开始</span>
+                        </div>
+                        <div class="bar">
+                            <div class="fill" style="width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>📖 前端转行工业软件路线图 | 最后更新：2026年5月</p>
+            <p style="margin-top: 12px; font-size: 0.75rem; color: var(--text-secondary);">
+                本路线图基于个人经历和行业趋势分析，持续迭代中...
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
